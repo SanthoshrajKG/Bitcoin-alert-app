@@ -14,12 +14,11 @@ app.config['MYSQL_HOST']=db['mysql_host']
 app.config['MYSQL_USER']=db['mysql_user']
 app.config['MYSQL_PASSWORD']=db['mysql_password']
 app.config['MYSQL_DB']=db['mysql_db']
-app.config['SECRET_KEY']='0bb3f3ef76a044c3bcdca3ce540f0b70'
 
 @app.route('/')
 def index():
     return "<b>This is my Krypto task for the infra role !<br><br>Go to <a href='http://127.0.0.1:5000/create'>Create<a> and Enter the used data and trigger value<b>"
-    
+
 @app.route('/alerts/create',methods=['GET','POST'])
 def Create_Alert():
     if(request.method=='POST'):
