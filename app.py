@@ -34,8 +34,10 @@ def Deleting_alert():
     if(request.method=='POST'):
         userDetails=request.form
         name=userDetails['name']
+        triggervalue=userDetails['triggervalue']
         cur=mysql.connection.cursor()
-        cur.execute('DELETE FROM users WHERE name="%s"'%name)
+        sql="DELETE FROM users WHERE name=%s AND triggervalue=%s"
+        cur.execute(sql,(name, triggervalue))
         mysql.connection.commit()
         cur.close()
         return 'Deleted an Alert'
