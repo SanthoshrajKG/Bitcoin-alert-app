@@ -16,6 +16,10 @@ schedule = "*"
 "mysql.connector" = "*"
 mysql-connector-python = "*"
 requests = "*"
+pyjwt = "*"
+pipreqs = "*"
+flask-jwt-extended = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.9"
