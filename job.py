@@ -3,11 +3,10 @@ import time
 import mysql.connector
 import requests
 import smtplib
-import ssl
 
 def send_mail(receiver_email):
     message = """ 
-    Subject: Alert Triggered for BTC !
+    Subject: Your Alert Triggered for BTC !
 
     Current price of BTC is now reached your expected value"""
     s = smtplib.SMTP('smtp.gmail.com', 587)
