@@ -41,8 +41,8 @@ def check():
     cur.close()
     conn.close()
 
-sender_email="santhosh.gvelu@gmail.com" #input("Enter the sender email..")#"santhosh.gvelu@gmail.com"
-password="jgvideimpzkfyimi" #input("Enter the password...")#"jgvideimpzkfyimi"
+sender_email=input("Enter the sender email..")
+password=input("Enter the password...")
 schedule.every(5).seconds.do(check)
 while(True):
     schedule.run_pending()
