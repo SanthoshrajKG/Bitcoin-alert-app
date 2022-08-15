@@ -1,8 +1,8 @@
 import schedule
 import time
-import mysql.connector
 import requests
 import smtplib
+import mysql.connector
 
 def send_mail(receiver_email):
     message = """ 
@@ -41,8 +41,8 @@ def check():
     cur.close()
     conn.close()
 
-sender_email=input("Enter the sender email..")#"santhosh.gvelu@gmail.com"
-password=input("Enter the password...")#"jgvideimpzkfyimi"
+sender_email="santhosh.gvelu@gmail.com" #input("Enter the sender email..")#"santhosh.gvelu@gmail.com"
+password="jgvideimpzkfyimi" #input("Enter the password...")#"jgvideimpzkfyimi"
 schedule.every(5).seconds.do(check)
 while(True):
     schedule.run_pending()

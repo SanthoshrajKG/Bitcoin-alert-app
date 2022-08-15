@@ -1,15 +1,11 @@
-from flask import Flask, jsonify, request, render_template, make_response, session
+from flask import Flask, request, render_template, make_response, session
 from flask_mysqldb import MySQL
 import yaml
-import jwt
-from datetime import datetime, timedelta
-from functools import wraps
-
 
 app=Flask(__name__)
 mysql=MySQL(app)
 
-db=yaml.safe_load(open('db.yaml'))
+db=yaml.safe_load(open('./app/db.yaml'))
 app.config['MYSQL_HOST']=db['mysql_host']
 app.config['MYSQL_USER']=db['mysql_user']
 app.config['MYSQL_PASSWORD']=db['mysql_password']
@@ -17,7 +13,7 @@ app.config['MYSQL_DB']=db['mysql_db']
 
 @app.route('/')
 def index():
-    return "<b>This is my Krypto task for the infra role !<br><br>Go to <a href='http://127.0.0.1:5000/create'>Create<a> and Enter the used data and trigger value<b>"
+    return "<b>This is my Krypto task for the infra role !<br><br>Go to <a href='http://127.0.0.1:5000/alerts/create'>Create<a> and Enter the used data and trigger value<b>"
 
 @app.route('/alerts/create',methods=['GET','POST'])
 def Create_Alert():
