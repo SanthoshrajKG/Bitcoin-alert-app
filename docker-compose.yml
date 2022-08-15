@@ -1,34 +1,22 @@
-version: "3"
-
+version: "2"
 services:
-  flask-app:
-    container_name: flask-app
-    build: app
-    restart: always
+  app:
+    build: ./app
+    links:
+      - db
     ports:
       - "5000:5000"
-    volumes:
-      - ./app:/app
-    networks:
-      - backend
 
-  mysql-db:
-    container_name: mysql-db
+  job:
+    build: ./job
+    links:
+      - db
+
+  db:
     image: mysql:5.7
-    restart: always
+    ports:
+      - "32000:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: urlshortener
-    ports:
-      - "3308:3306"
     volumes:
-      - ./database:/var/lib/mysql
-    networks:
-      - backend
-
-networks:
-  backend:
-
-volumes:
-  app:
-  database:
+      - ./db:/docker-entrypoint-initdb.d/:ro
