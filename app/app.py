@@ -1,15 +1,13 @@
 from flask import Flask, request, render_template, make_response, session
 from flask_mysqldb import MySQL
-import yaml
 
 app=Flask(__name__)
 mysql=MySQL(app)
 
-db=yaml.safe_load(open('./app/db.yaml'))
-app.config['MYSQL_HOST']=db['mysql_host']
-app.config['MYSQL_USER']=db['mysql_user']
-app.config['MYSQL_PASSWORD']=db['mysql_password']
-app.config['MYSQL_DB']=db['mysql_db']
+app.config['MYSQL_HOST']="localhost"
+app.config['MYSQL_USER']="root"
+app.config['MYSQL_PASSWORD']="ajj@7646gv"
+app.config['MYSQL_DB']="Kryptotask"
 
 @app.route('/')
 def index():
