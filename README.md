@@ -21,7 +21,7 @@ Install Krypto-task with npm
     
 ## Usage
 
-docker Runs the app.py which has the end points and runs job.py where I hard coded sender email id and password(google App password) for now, you can change it if required, it has the scheduler which continuosly check for the matching bitcoin price and triggers an email.
+Docker runs the app.py which has the end points and runs job.py where I hard coded sender email id and password(google App password) for now, you can change it if required, it has the scheduler which continuosly check for the matching bitcoin price and triggers an email.
 
 Navigate to http://127.0.0.1:5000/alerts/create and enter the user data and alert price in text box to create a new alert.
 
