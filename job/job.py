@@ -35,7 +35,7 @@ def check():
         for user in userDetails:
             if(user[2]==coin):
                 send_mail(user[1])
-                print("Alert Triggered: Mail sent to the respective user !")
+                print("Alert Triggered: Mail sent to the %s user !",user[0])
                 cur.execute("UPDATE users SET isTriggered='YES' WHERE triggervalue=%s"%coin)
                 conn.commit()                 
     cur.close()
