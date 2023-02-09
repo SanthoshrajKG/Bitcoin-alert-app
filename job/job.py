@@ -24,7 +24,7 @@ def fetch_bitcoin():
     return(result)
 
 def check():
-    conn=mysql.connector.connect(host="localhost",user="root",password="ajj@7646gv",database="Kryptotask")
+    conn=mysql.connector.connect(host="localhost",user="root",password="PASS",database="DBNAME")
     cur=conn.cursor()
     rows=cur.execute("SELECT * FROM users WHERE isTriggered='NO'")
     if(rows==0):return
@@ -41,8 +41,8 @@ def check():
     cur.close()
     conn.close()
 
-sender_email="santhosh.gvelu@gmail.com"
-password="jgvideimpzkfyimi"
+sender_email="YOUR_EMAIL@gmail.com"
+password="EMAIL_PASS"
 schedule.every(5).seconds.do(check)
 while(True):
     schedule.run_pending()
