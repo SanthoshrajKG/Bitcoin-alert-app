@@ -6,8 +6,8 @@ mysql=MySQL(app)
 
 app.config['MYSQL_HOST']="localhost"
 app.config['MYSQL_USER']="root"
-app.config['MYSQL_PASSWORD']="ajj@7646gv"
-app.config['MYSQL_DB']="Kryptotask"
+app.config['MYSQL_PASSWORD']="PASS"
+app.config['MYSQL_DB']="DBNAME"
 
 @app.route('/')
 def index():
